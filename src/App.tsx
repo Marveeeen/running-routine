@@ -1,5 +1,7 @@
 import Header from "@/components/header";
 import ThemeToggle from "@/components/theme-toggle";
+import TodoList from "@/components/todo-list";
+import RunningRoutine from "@/components/running-routine";
 
 function App() {
   return (
@@ -13,8 +15,8 @@ function App() {
               <ThemeToggle />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>Sidebar</div>
-              <div>Main Content</div>
+              <RunningRoutine />
+              <TodoList />
             </div>
           </div>
         </div>
