@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { PlusCircle, CheckCircle, Circle } from "lucide-react";
 
+/*
+  TODO: make the data peristent
+  TODO: reset todo-list every new day
+*/
+
 export default function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Stretch before run", completed: false },
@@ -54,9 +59,13 @@ export default function TodoList() {
               onClick={() => toggleTodo(todo.id)}
             >
               {todo.completed ? (
-                <CheckCircle className="text-green-500 dark:text-green-400" />
+                <button className="focus:outline-none focus:ring-2 focus:ring-green-500">
+                  <CheckCircle className="text-green-500 dark:text-green-400" />
+                </button>
               ) : (
-                <Circle className="text-gray-400 dark:text-gray-500" />
+                <button className="focus:outline-none focus:ring-2 focus:ring-gray-400">
+                  <Circle className="text-gray-400 dark:text-gray-500" />
+                </button>
               )}
               <span
                 className={`${
