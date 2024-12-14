@@ -1,3 +1,5 @@
+import Header from "@/components/header";
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-6 flex flex-col justify-center sm:py-12">
@@ -6,7 +8,7 @@ function App() {
         <div className="relative px-4 py-10 bg-white dark:bg-gray-800 shadow-lg sm:rounded-3xl sm:p-20">
           <div className="max-w-3xl mx-auto">
             <div className="flex justify-between items-center mb-6">
-              <div>Header</div>
+              <Header />
               <div>Theme</div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
