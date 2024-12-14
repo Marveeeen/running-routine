@@ -1,50 +1,86 @@
-# React + TypeScript + Vite
+# Running Routine Monitoring Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This web app is designed to help you monitor your running routine effectively. Built with modern technologies like **React (TypeScript)**, **Vite**, **Tailwind CSS**, and **shadcn**, it provides a sleek, responsive, and user-friendly experience. Whether you're tracking daily tasks or analyzing your weekly runs, this app has got you covered. You may try the demo app [Demo](https://marveeeen.github.io/running-routine/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. Realtime Date and Time
 
-- Configure the top-level `parserOptions` property like this:
+- Displays the current date and time dynamically, ensuring you stay up-to-date.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 2. Todo List for Today
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Add, view, and manage your tasks for the day to stay organized and productive.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 3. Card for Today's Run
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- A dedicated card summarizing your run for the day, including key details.
+
+### 4. Weekly Routine Table
+
+- A table showcasing your entire week's running routine.
+- Fully **modifiable** and updates are **persistently saved**, ensuring no loss of data.
+
+### 5. Light and Dark Themes
+
+- Toggle between light and dark themes to suit your preferences.
+
+### 6. Responsive Design
+
+- Fully optimized for **small devices**, ensuring accessibility on phones and tablets.
+
+---
+
+## Technologies Used
+
+### Frontend
+
+- **React (TypeScript)**: For a robust and scalable user interface.
+- **Vite**: Fast and efficient build tool for modern web development.
+- **Tailwind CSS**: Utility-first CSS framework for seamless styling.
+- **shadcn**: Component library for elegant UI components.
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Marveeeen/running-routine.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd running-routine
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the app in your browser:
+   ```
+   http://localhost:5173/
+   ```
+
+---
+
+## Usage
+
+- **Track Your Daily Routine**: Add tasks to your todo list and update your running stats.
+- **Monitor Weekly Progress**: View and modify your weekly routine table for a complete overview.
+- **Personalize Your Experience**: Switch between dark and light modes and enjoy a responsive design on any device.
