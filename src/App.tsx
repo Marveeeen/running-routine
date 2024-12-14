@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import ThemeToggle from "@/components/theme-toggle";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
           <div className="max-w-3xl mx-auto">
             <div className="flex justify-between items-center mb-6">
               <Header />
-              <div>Theme</div>
+              <ThemeToggle />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>Sidebar</div>
