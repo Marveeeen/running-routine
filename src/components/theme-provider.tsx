@@ -7,19 +7,21 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
+const getDefaultTheme = () => {
+  const savedTheme = localStorage.getItem("theme") as Theme | null;
+  if (savedTheme) {
+    return savedTheme;
+  }
+
+  return "light";
+};
+
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState<Theme>("light");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, []);
+  const [theme, setTheme] = useState<Theme>(getDefaultTheme);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);

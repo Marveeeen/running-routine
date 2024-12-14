@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { type RunDay } from "@/types";
 import WeeklyRunningRoutine from "@/components/weekly-running-routine";
-import initialWeeklyRoutine from "@/data";
+import { initialWeeklyRoutine } from "@/data";
 
 const getTodayRun = (weeklyRoutine: RunDay[]) => {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -14,13 +14,23 @@ const getTodayRun = (weeklyRoutine: RunDay[]) => {
   return todayRun;
 };
 
+const getDefaultRoutine = () => {
+  const savedRoutine = localStorage.getItem("routine");
+  if (savedRoutine) {
+    return JSON.parse(savedRoutine) as RunDay[];
+  }
+
+  return initialWeeklyRoutine;
+};
+
 export default function RunningRoutine() {
   const [weeklyRoutine, setWeeklyRoutine] =
-    useState<RunDay[]>(initialWeeklyRoutine);
+    useState<RunDay[]>(getDefaultRoutine);
 
   const todayRun = getTodayRun(weeklyRoutine);
 
   const handleWeeklyRoutineChange = (modifiedWeeklyRoutine: RunDay[]) => {
+    localStorage.setItem("routine", JSON.stringify(modifiedWeeklyRoutine));
     setWeeklyRoutine(modifiedWeeklyRoutine);
   };
 

@@ -1,4 +1,6 @@
-export default [
+import { RunDay } from "./types";
+
+export const initialWeeklyRoutine: RunDay[] = [
   { day: "Mon", run: "Easy Run", distance: "5 km", duration: "30 mins" },
   { day: "Tue", run: "Rest Day", distance: "-", duration: "-" },
   {
@@ -16,4 +18,4 @@ export default [
     distance: "3 km",
     duration: "20 mins",
   },
-];
+] as const;
