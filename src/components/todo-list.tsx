@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { PlusCircle, CheckCircle, Circle } from "lucide-react";
 
-/*
-  TODO: make the data peristent
-  TODO: reset todo-list every new day
-*/
-
 export default function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Stretch before run", completed: false },
